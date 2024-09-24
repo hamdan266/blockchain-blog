@@ -1,0 +1,51 @@
+---
+import DefaultLayout from "../layouts/Default.astro";
+import InteriorHero from "../components/InteriorHero.astro";
+import InteriorContent from "../components/InteriorContent.astro";
+import { CutCornerButton } from "../components/CutCornerButton";
+import Input from "../components/Input.astro";
+import Textarea from "../components/Textarea.astro";
+---
+
+<DefaultLayout>
+    <InteriorHero>
+        <p
+            class="uppercase font-extrabold text-center text-zinc-500 tracking-wider"
+        >
+            Let's Talk
+        </p>
+        <h1
+            class="font-heading font-black text-5xl md:text-6xl lg:text-7xl text-center mt-4"
+        >
+            Contact Us
+        </h1>
+        <p
+            class="text-center text-xl md:text-2xl mt-6 max-w-xl mx-auto text-zinc-400"
+        >
+            We're here to help and answer any questions you may have. Reach out
+            to us to learn more about our services, get support, or to apply for
+            positions.
+        </p>
+    </InteriorHero>
+    <InteriorContent>
+        <div class="max-w-xl mx-auto">
+            <h2 class="font-heading font-black text-3xl">
+                What can we help you with?
+            </h2>
+            <form
+                class="flex flex-col mt-8"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+            >
+                <label for="name">Name</label>
+                <Input type="text" name="name" id="name" class="mt-1" />
+                <label class="mt-4" for="email">Email</label>
+                <Input type="email" name="email" id="email" class="mt-1" />
+                <label class="mt-4" for="message">Message</label>
+                <Textarea name="message" id="message" class="mt-1" />
+                <CutCornerButton className="mt-4">Send Message</CutCornerButton>
+            </form>
+        </div>
+    </InteriorContent>
+</DefaultLayout>
